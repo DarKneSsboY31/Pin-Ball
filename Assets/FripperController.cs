@@ -43,37 +43,34 @@ public class FripperController : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.RightArrow) && tag == "RightFripperTag"){
             SetAngle(this.defaultAngle);
         }
+        //Touchを定義
+
+        Touch[] myTouches = Input.touches;
+        for (int i = 0; i < Input.touchCount; i++) {
+        
 
         //画面左をタップした時、左フリッパーを動かす。
-        if (Input.GetMouseButtonDown(0) && tag == "LeftFripperTag" && Input.GetTouch(0).position.x < Screen.width * 0.5f) {
+        if (Input.GetTouch(i).position.x < Screen.width * 0.5f && tag == "LeftFripperTag") {
             SetAngle(this.flickAngle);
         }
 
         //画面右をタップした時、右フリッパーを動かす。
-        if (Input.GetMouseButtonDown(0) && tag == "RightFripperTag" && Input.GetTouch(0).position.x > Screen.width * 0.5f) {
-            SetAngle(this.flickAngle);
-        }
-        //同時に押した場合
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetTouch(i).position.x > Screen.width * 0.5f && tag == "RightFripperTag") {
             SetAngle(this.flickAngle);
         }
 
-        //指を画面から話した時、フリッパーをそれぞれ戻す。
-            if (Input.GetMouseButtonUp(0) && tag == "LeftFripperTag" &&  Input.GetTouch(0).phase == TouchPhase.Ended) {
+            //指を画面から話した時、フリッパーをそれぞれ戻す。
+            if (Input.GetTouch(i).position.x < Screen.width * 0.5f && tag == "LeftFripperTag" &&  Input.GetTouch(i).phase == TouchPhase.Ended) {
             SetAngle(this.defaultAngle);
         }
 
-        if (Input.GetMouseButtonUp(0) && tag == "RightFripperTag"  && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (Input.GetTouch(i).position.x > Screen.width * 0.5f && tag == "RightFripperTag" && Input.GetTouch(i).phase == TouchPhase.Ended)
         {
             SetAngle(this.defaultAngle);
         }
-        //同時に離した場合
-        if (Input.GetMouseButtonUp(1)){
-            SetAngle(this.defaultAngle);
-        }
-
-
     }
+
+}
 
     //フリッパーの傾きを設定
     public void SetAngle(float angle) {

@@ -6,7 +6,7 @@ public class SterController : MonoBehaviour
 {
 
     //回転速度
-    private float rotSpeed = 60.0f;
+    private float rotSpeed = 1.0f;
 
     // Use this for initialization
     void Start()

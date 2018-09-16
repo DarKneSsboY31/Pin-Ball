@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 64273826662776242}
   - component: {fileID: 114970096483464452}
   - component: {fileID: 114515130062827728}
-  - component: {fileID: 114643370121053324}
   m_Layer: 0
   m_Name: LargeStarPrehab
   m_TagString: LargeStarTag
@@ -109,17 +108,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a50e83b88dce3164f9160294c8b6b78e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114643370121053324
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1783093989135638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f64f2bce8199c3d4f9ec9de5dfe16585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114970096483464452

@@ -55,6 +55,5 @@ public class BrightnessRegulator : MonoBehaviour {
     void OnCollisionEnter(Collision other) {
         //角度を180に設定
         this.degree = 180;
-    }
-
+       }
 }
